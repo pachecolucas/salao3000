@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ec1685">
+  <meta name="description" content="Salão da Barbie — beleza, autoestima e cuidado em um só lugar. Agende seu horário pelo WhatsApp.">
+  <title>Salão da Barbie 💗</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap" rel="stylesheet">
+  <style>
+    :root{--pink:#ec1685;--pink2:#ff5caf;--pale:#fff1f8;--ink:#61233f;--muted:#806274;--white:#fff}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:86px}
+    body{margin:0;font-family:"DM Sans",sans-serif;color:var(--ink);background:#fffafd}
+    a{color:inherit;text-decoration:none}
+    .topbar{position:sticky;top:0;z-index:10;background:rgba(255,250,253,.92);backdrop-filter:blur(12px);border-bottom:1px solid #f9d8e9}
+    .nav{max-width:1120px;margin:auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:flex;align-items:center;gap:10px;color:var(--pink);font-weight:700;line-height:1}
+    .brand-mark{width:42px;height:42px;display:grid;place-items:center;border-radius:50% 50% 45% 45%;background:linear-gradient(135deg,#ff8ac7,var(--pink));color:white;font-size:23px;box-shadow:0 7px 18px #ec16852c}
+    .brand-name{font-family:"Playfair Display",serif;font-size:25px;font-style:italic}
+    .brand small{display:block;font-family:"DM Sans",sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;margin-top:5px}
+    .navlinks{display:flex;gap:28px;align-items:center;font-size:13px;font-weight:700}
+    .navlinks a{transition:color .2s}.navlinks a:hover{color:var(--pink)}
+    .nav-cta{background:var(--pink);color:white;padding:11px 17px;border-radius:30px;box-shadow:0 7px 18px #ec16852b}
+    .hero{position:relative;overflow:hidden;background:linear-gradient(115deg,#ffe6f2 0%,#ffd0e7 50%,#f66bb4 100%)}
+    .hero-inner{max-width:1120px;min-height:520px;margin:auto;padding:76px 24px;display:flex;align-items:center;position:relative}
+    .hero-copy{position:relative;z-index:2;width:53%;max-width:560px}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--pink);font-size:12px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase}
+    .eyebrow:before{content:"";width:25px;height:2px;background:var(--pink)}
+    h1{font-family:"Playfair Display",serif;font-size:clamp(48px,6.2vw,76px);line-height:1.02;letter-spacing:-2px;margin:20px 0 16px;color:#d90c76}
+    h1 em{color:#8c2456;font-weight:600}
+    .hero p{font-size:17px;line-height:1.75;color:#74435e;max-width:420px;margin:0 0 28px}
+    .button{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:#13b965;color:white;padding:15px 22px;border-radius:999px;font-weight:700;box-shadow:0 10px 24px #0ca65a35;transition:transform .2s,box-shadow .2s}
+    .button:hover{transform:translateY(-3px);box-shadow:0 14px 28px #0ca65a4a}
+    .button svg{width:23px;height:23px;flex:none}
+    .tiny-note{font-size:12px!important;color:#895c76!important;margin:14px 0 0!important}
+    .hero-art{position:absolute;right:-12px;bottom:0;width:54%;height:100%;background-image:linear-gradient(90deg,#ffd9ec00 0%,#f6a6d300 100%),url("assets/hero.jpg");background-position:center;background-size:cover;mask-image:linear-gradient(90deg,transparent 0%,#000 18%);opacity:.97}
+    .sparkle{position:absolute;color:#fff;font-size:36px;right:7%;top:14%;text-shadow:0 0 20px #fff}
+    .section{padding:78px 24px}
+    .section-inner{max-width:1120px;margin:auto}
+    .section-heading{text-align:center;margin-bottom:42px}
+    .section-heading .eyebrow:before{display:none}
+    h2{font-family:"Playfair Display",serif;font-size:clamp(34px,4vw,46px);margin:10px 0;color:#bd176d}
+    .section-heading p{color:var(--muted);margin:0;font-size:15px;line-height:1.7}
+    .services{background:#fffafd}
+    .service-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .service{padding:28px 20px 26px;background:white;border:1px solid #f9dce9;border-radius:22px;text-align:center;box-shadow:0 10px 30px #b92a6a08;transition:transform .2s,border-color .2s}
+    .service:hover{transform:translateY(-5px);border-color:#f6a1cd}
+    .service-icon{width:66px;height:66px;margin:0 auto 17px;display:grid;place-items:center;border-radius:22px;background:var(--pale);font-size:30px}
+    .service h3{margin:0 0 9px;font-size:16px;color:#8c2456}
+    .service p{font-size:13px;line-height:1.65;color:var(--muted);margin:0}
+    .about{background:linear-gradient(130deg,#fff0f7,#ffe0ef)}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:56px}
+    .about-art{min-height:330px;border-radius:32px;background:radial-gradient(circle at 70% 20%,#fff 0 7%,transparent 8%),linear-gradient(145deg,#ffb5d9,#f02d91);display:grid;place-items:center;position:relative;overflow:hidden;box-shadow:0 20px 50px #c62c7820}
+    .about-art:before,.about-art:after{content:"♡";position:absolute;color:#fff8;font-size:130px;font-family:serif}
+    .about-art:before{top:-15px;left:20px}.about-art:after{right:12px;bottom:-55px}
+    .mirror{width:155px;height:235px;border:10px solid #fff8;border-radius:90px 90px 25px 25px;display:grid;place-items:center;background:linear-gradient(145deg,#ffedf6aa,#ffffff30);font-size:76px;box-shadow:0 0 0 5px #ff7fbc66}
+    .about-copy h2{margin-top:12px}
+    .about-copy p{color:#79506a;line-height:1.9;font-size:15px}
+    .checklist{display:grid;gap:12px;margin:24px 0 28px}
+    .check{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:600}
+    .check span{display:grid;place-items:center;background:white;color:var(--pink);width:25px;height:25px;border-radius:50%}
+    .cta-band{padding:58px 24px;background:var(--pink);color:white;text-align:center;position:relative;overflow:hidden}
+    .cta-band:before,.cta-band:after{content:"♡";position:absolute;color:#ffffff30;font-size:130px;top:-22px}
+    .cta-band:before{left:7%}.cta-band:after{right:7%}
+    .cta-band h2{color:white;margin:0 0 10px}.cta-band p{margin:0 0 24px;color:#ffe4f2}
+    .cta-band .button{background:white;color:#14864b;box-shadow:none}
+    footer{padding:28px 24px;background:#fffafd;text-align:center;color:#8e6a7f;font-size:12px}
+    .footer-brand{justify-content:center;margin-bottom:12px}
+    .footer-brand .brand-mark{width:32px;height:32px;font-size:17px}
+    .footer-brand .brand-name{font-size:21px}
+    .footer-contact{margin:10px 0 16px;display:flex;justify-content:center;gap:20px;flex-wrap:wrap}
+    .footer-contact a{color:#c51670;font-weight:700}
+    .heart{color:var(--pink)}
+    @media(max-width:760px){
+      .nav{padding:12px 18px}.navlinks{gap:14px;font-size:12px}.nav-cta{display:none}
+      .hero-inner{min-height:650px;align-items:flex-start;padding:58px 22px 300px}
+      .hero-copy{width:100%;max-width:510px}.hero-art{width:100%;height:48%;right:0;background-position:center 35%;mask-image:linear-gradient(180deg,transparent 0%,#000 22%)}
+      h1{font-size:56px}.hero p{font-size:15px;max-width:340px}
+      .section{padding:60px 20px}.service-grid{grid-template-columns:repeat(2,1fr);gap:12px}.service{padding:22px 14px}
+      .about-grid{grid-template-columns:1fr;gap:30px}.about-art{min-height:260px}.about-copy h2{font-size:36px}
+      .cta-band:before{left:-30px}.cta-band:after{right:-30px}
+    }
+    @media(max-width:420px){
+      .brand-name{font-size:21px}.brand-mark{width:36px;height:36px}.navlinks{gap:10px;font-size:11px}
+      .navlinks a:nth-child(3){display:none}.hero-inner{min-height:630px;padding-top:48px}
+      h1{font-size:49px}.button{padding:14px 17px;font-size:13px}
+      .service-grid{gap:10px}.service h3{font-size:14px}.service p{font-size:12px}
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <nav class="nav" aria-label="Navegação principal">
+      <a class="brand" href="#inicio" aria-label="Salão da Barbie, início">
+        <span class="brand-mark">♡</span><span><span class="brand-name">Salão da Barbie</span><small>beleza & autoestima</small></span>
+      </a>
+      <div class="navlinks">
+        <a href="#inicio">Início</a><a href="#servicos">Serviços</a><a href="#sobre">Sobre</a><a href="#contato">Contato</a>
+      </div>
+      <a class="nav-cta" href="https://wa.me/5548999826011?text=Oi%21%20Quero%20agendar%20um%20hor%C3%A1rio%20no%20Sal%C3%A3o%20da%20Barbie." target="_blank" rel="noopener">Agendar horário ↗</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-art" aria-hidden="true"></div><div class="sparkle" aria-hidden="true">✧</div>
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <span class="eyebrow">Seu momento de brilhar</span>
+          <h1>Um toque de<br><em>Barbie</em> em você<span class="heart">.</span></h1>
+          <p>Realce o que te faz única! Um espaço feito para cuidar de você, renovar sua autoestima e deixar cada dia mais cor-de-rosa.</p>
+          <a class="button" href="https://wa.me/5548999826011?text=Oi%21%20Quero%20agendar%20um%20hor%C3%A1rio%20no%20Sal%C3%A3o%20da%20Barbie." target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.5 11.7a8.4 8.4 0 0 1-12.4 7.4L3 20.5l1.4-4.9A8.4 8.4 0 1 1 20.5 11.7Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8.2 7.8c.3-.6.6-.6 1-.6h.4c.2 0 .4.1.5.4l.7 1.7c.1.2 0 .4-.1.6l-.6.7c-.2.2-.2.4 0 .7.5.9 1.2 1.6 2.1 2.1.3.2.5.2.7 0l.8-.9c.2-.2.4-.2.6-.1l1.7.8c.3.1.4.3.4.5 0 .5-.2 1.1-.6 1.5-.5.5-1.3.7-2.1.5-1.1-.3-2.5-1-3.8-2.2-1.4-1.3-2.2-2.8-2.4-3.8-.2-.8 0-1.5.7-2Z" fill="currentColor"/></svg>
+            Quero agendar pelo WhatsApp
+          </a>
+          <p class="tiny-note">♡ Atendimento com carinho, do jeitinho que você merece.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section services" id="servicos">
+      <div class="section-inner">
+        <div class="section-heading"><span class="eyebrow">Um carinho só seu</span><h2>Nossos serviços</h2><p>Seu ritual de beleza favorito está te esperando.</p></div>
+        <div class="service-grid">
+          <article class="service"><div class="service-icon">✂️</div><h3>Cabelos</h3><p>Cortes, escova, penteados e aquele visual cheio de personalidade.</p></article>
+          <article class="service"><div class="service-icon">💅</div><h3>Unhas</h3><p>Manicure, pedicure e cores lindas para combinar com você.</p></article>
+          <article class="service"><div class="service-icon">🧖🏻‍♀️</div><h3>Estética facial</h3><p>Cuidados delicados para uma pele com viço e luminosidade.</p></article>
+          <article class="service"><div class="service-icon">💄</div><h3>Maquiagem</h3><p>Do look natural ao glamouroso para seus momentos especiais.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section about" id="sobre">
+      <div class="section-inner about-grid">
+        <div class="about-art" aria-hidden="true"><div class="mirror">💗</div></div>
+        <div class="about-copy"><span class="eyebrow">Você merece esse momento</span><h2>Mais que beleza.<br>Um momento seu.</h2><p>Aqui, cada detalhe é pensado para você se sentir acolhida, linda e confiante. Venha fazer uma pausa na rotina e sair pronta para brilhar!</p>
+          <div class="checklist"><div class="check"><span>✓</span> Atendimento atencioso e personalizado</div><div class="check"><span>✓</span> Um ambiente leve, delicado e cheio de charme</div><div class="check"><span>✓</span> Agendamento fácil pelo WhatsApp</div></div>
+          <a class="button" href="https://wa.me/5548999826011?text=Oi%21%20Gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os." target="_blank" rel="noopener">Vamos conversar? ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-band" id="contato">
+      <h2>Ficou com vontade? 💕</h2><p>Seu próximo momento de beleza começa com uma mensagem.</p>
+      <a class="button" href="https://wa.me/5548999826011?text=Oi%21%20Quero%20agendar%20um%20hor%C3%A1rio%20no%20Sal%C3%A3o%20da%20Barbie." target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.5 11.7a8.4 8.4 0 0 1-12.4 7.4L3 20.5l1.4-4.9A8.4 8.4 0 1 1 20.5 11.7Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8.2 7.8c.3-.6.6-.6 1-.6h.4c.2 0 .4.1.5.4l.7 1.7c.1.2 0 .4-.1.6l-.6.7c-.2.2-.2.4 0 .7.5.9 1.2 1.6 2.1 2.1.3.2.5.2.7 0l.8-.9c.2-.2.4-.2.6-.1l1.7.8c.3.1.4.3.4.5 0 .5-.2 1.1-.6 1.5-.5.5-1.3.7-2.1.5-1.1-.3-2.5-1-3.8-2.2-1.4-1.3-2.2-2.8-2.4-3.8-.2-.8 0-1.5.7-2Z" fill="currentColor"/></svg>
+        WhatsApp: (48) 99982-6011
+      </a>
+    </section>
+  </main>
+  <footer>
+    <a class="brand footer-brand" href="#inicio"><span class="brand-mark">♡</span><span><span class="brand-name">Salão da Barbie</span><small>beleza & autoestima</small></span></a>
+    <div class="footer-contact"><span>Feito com <span class="heart">♥</span> e muito rosa</span><a href="https://wa.me/5548999826011" target="_blank" rel="noopener">WhatsApp: (48) 99982-6011</a></div>
+    <div>© <span id="year"></span> Salão da Barbie. Todos os direitos reservados.</div>
+  </footer>
+  <script>
+    // Atualiza automaticamente o ano no rodapé.
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

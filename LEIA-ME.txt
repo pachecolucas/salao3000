@@ -1,0 +1,9 @@
+SALÃO DA BARBIE — site de uma página
+
+Como visualizar:
+1. Extraia o arquivo ZIP.
+2. Abra index.html no navegador.
+
+O site usa HTML, CSS e JavaScript puro. A imagem principal fica em assets/hero.jpg.
+Os botões abrem uma conversa no WhatsApp +55 48 99982-6011.
+A fonte é carregada do Google Fonts; sem internet, o site usa fontes alternativas.
